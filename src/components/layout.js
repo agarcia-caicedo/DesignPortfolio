@@ -32,7 +32,6 @@ const Layout= () => {
                   <Img />
                 ]
             }/>
-            <br/>
                <Section
               title={"Video and Film"}
               gallery={
