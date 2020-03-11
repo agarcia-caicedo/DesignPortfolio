@@ -3,6 +3,9 @@ import { makeStyles } from '@material-ui/core/styles';
 
 import Banner from './banner';
 import Section from './section';
+import Web from './galleries/webDesign';
+import Img from './galleries/images';
+import Vid from './galleries/videos';
 
 const useStyles = makeStyles({
     root: {
@@ -16,11 +19,27 @@ const Layout= () => {
           <div className={classes.root}>
               <Banner />
               <Section
-              title={"Web Design"} />
+              title={"Web Design"}
+              gallery={
+                  [
+                    <Web />
+                  ]
+              } />
                <Section
-              title={"Art Gallery"} />
+              title={"Art Gallery"}
+              gallery={
+                [
+                  <Img />
+                ]
+            }/>
+            <br/>
                <Section
-              title={"Video and Film"} />
+              title={"Video and Film"}
+              gallery={
+                [
+                  <Vid />
+                ]
+            }/>
           </div>
       )
     }
