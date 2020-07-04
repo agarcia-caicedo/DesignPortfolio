@@ -1,11 +1,11 @@
 import React from 'react';
 import { makeStyles } from '@material-ui/core/styles';
+import { useTheme } from '@material-ui/core/styles';
+import useMediaQuery from '@material-ui/core/useMediaQuery';
 
+import MobileBanner from './mobileBanner';
 import Banner from './banner';
-import Section from './section';
-import Web from './galleries/webDesign';
-import Img from './galleries/images';
-import Vid from './galleries/videos';
+
 
 const useStyles = makeStyles({
     root: {
@@ -15,30 +15,11 @@ const useStyles = makeStyles({
 
 const Layout= () => {
     const classes = useStyles();
+    const theme = useTheme();
+    const matches = useMediaQuery(theme.breakpoints.down('sm'));
       return (
           <div className={classes.root}>
-              <Banner />
-              <Section
-              title={"Web Design"}
-              gallery={
-                  [
-                    <Web />
-                  ]
-              } />
-               <Section
-              title={"Art Gallery"}
-              gallery={
-                [
-                  <Img />
-                ]
-            }/>
-               <Section
-              title={"Video and Film"}
-              gallery={
-                [
-                  <Vid />
-                ]
-            }/>
+            {matches ? <MobileBanner className="mobile-header" /> : <Banner className="header" />}
           </div>
       )
     }
