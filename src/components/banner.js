@@ -1,42 +1,26 @@
 import React from "react"
 import { makeStyles } from "@material-ui/core/styles"
-import CssBaseline from "@material-ui/core/CssBaseline"
-import Box from "@material-ui/core/Box"
-import Typography from "@material-ui/core/Typography"
-import Fab from "@material-ui/core/Fab"
-import KeyboardArrowDownIcon from "@material-ui/icons/KeyboardArrowDown"
+import Grid from "@material-ui/core/Grid"
+import Triangle from "../media/triangles_Red.png"
+import TriangleBlue from "../media/triangles_Blue.png"
 
 const useStyles = makeStyles({
   root: {
-    backgroundColor: "#f94d2f",
+    backgroundColor: "#fff",
     height: "100vh",
-    position: "relative",
+    flexWrap: "wrap",
   },
-  box: {
-    position: "absolute",
-    top: "45%",
-    marginTop: "-50px",
-    margin: "0 auto",
-    width: "100%",
+  pages: {
+    padding: "7px",
+    maxHeight: "100vh",
   },
-  title: {
-    letterSpacing: "1.5rem",
-    lineHeight: 1,
+  pageDesign: {
+    backgroundColor: "#FFCB51",
+    height: "100%",
   },
-  subtitle: {
-    lineHeight: 2,
-    letterSpacing: "1rem",
-    color: "#f9f4a2",
-  },
-  button: {
-    "&:hover": {
-      backgroundColor: "secondary",
-    },
-  },
-  fab: {
-    position: "absolute",
-    left: "48%",
-    bottom: "1rem",
+  triangle: {
+    width: "80%",
+    height: "auto",
   },
 })
 
@@ -44,28 +28,18 @@ const Banner = () => {
   const classes = useStyles()
 
   return (
-    <React.Fragment>
-      <CssBaseline />
-      <div className={classes.root} id="scroll-down-anchor">
-        <Box className={classes.box}>
-          <Typography variant="h1" align="center" color="primary" className={classes.title}>
-            ANA GARCIA
-          </Typography>
-          <Typography align="center" variant="h4" className={classes.subtitle}>
-            Learn • Design • Code
-          </Typography>
-        </Box>
-        <div className={classes.fab}>
-            <Fab
-              color="secondary"
-              className={classes.button}
-              aria-label="scroll-down"
-            >
-              <KeyboardArrowDownIcon color="primary" />
-            </Fab>
-        </div>
-      </div>
-    </React.Fragment>
+    <Grid container className={classes.root} spacing={0}>
+      <Grid item md={6} sm={12} xs={12} className={classes.pages}>
+        <Grid container className={classes.pageDesign} spacing={0}>
+          <img src={Triangle} alt="Red triangles" className={classes.triangle}></img>
+        </Grid>
+      </Grid>
+      <Grid item md={6} sm={12} xs={12} className={classes.pages}>
+        <Grid container justify="flex-end" className={classes.pageDesign} spacing={0}>
+          <img src={TriangleBlue} alt="Blue triangles" className={classes.triangle}></img>
+        </Grid>
+      </Grid>
+    </Grid>
   )
 }
 
