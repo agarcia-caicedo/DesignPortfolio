@@ -1,52 +1,58 @@
 import React from "react"
 import { makeStyles } from "@material-ui/core/styles"
 import Typography from "@material-ui/core/Typography"
+import Grid from "@material-ui/core/Grid"
 
 const useStyles = makeStyles({
   root: {
-    backgroundColor: "#f9f4a2",
-    height: "110vh",
+    backgroundColor: "#fff",
+    height: "100vh",
   },
-  titleBg: {
-    backgroundColor: "#131c3f",
-    padding: "1rem",
-    position: "relative",
-    top: "2rem",
-    left: "0.5rem",
-    display: "inline-block",
-    boxShadow: "1rem 1.5rem #f94d2f",
+  sideBar:{
+    backgroundColor: "#d24d22",
   },
-  break: {
-    border: "0.5rem solid #131c3f",
-    position: "relative",
-    bottom: "-18vh",
-    width: "80%",
-    boxShadow: "0.75rem 0.5rem #f94d2f",
+  linkList:{
+    backgroundColor: "#FFCB51",
+    height: "8vh",
+    marginTop: "25vh",
+    marginBottom: "5vh",
+    fontFamily: "'Oswald', sans-serif",
+    color: "#430C05",
+    display: "block",
+    fontSize: "5vh",
+    textAlign: "center",
   },
-  gridList: {
-    margin: 'auto',
-    width: '80%',
-    top: "13%",
-    position: "relative",
+  linkList2:{
+    backgroundColor: "#FFBA26",
+    height: "8vh",
+    marginBottom: "5vh",
+    fontFamily: "'Oswald', sans-serif",
+    color: "#430C05",
+    display: "block",
+    fontSize: "5vh",
+    textAlign: "center",
+  },
+  linkList3:{
+    backgroundColor: "#E67413",
+    height: "8vh",
+    fontFamily: "'Oswald', sans-serif",
+    fontSize: "5vh",
+    color: "#430C05",
+    display: "block",
+    textAlign: "center",
   },
 })
 
 const Section = props => {
   const classes = useStyles()
   return (
-    <div className={classes.root}>
-      <div className={classes.titleBg}>
-        <Typography variant="h3" color="primary">
-          {props.title}
-        </Typography>
-      </div>
-
-       <div className={classes.gridList}>
-       {props.gallery}
-       </div>
-
-      <hr className={classes.break} />
-    </div>
+    <Grid container className={classes.root} spacing={0}>
+       <Grid item xs={2} className={classes.sideBar}>
+         <div className={classes.linkList}>About</div>
+         <div className={classes.linkList2}>Work</div>
+         <div className={classes.linkList3}>Contact</div>
+       </Grid>
+    </Grid>
   )
 }
 
