@@ -65,6 +65,7 @@ const useStyles = makeStyles({
   },
   card: {
     width: "47vw",
+    padding: "2vh",
   },
   text: {
     fontFamily: "'Oswald', sans-serif",

@@ -20,8 +20,8 @@ const Layout= () => {
     const matches = useMediaQuery(theme.breakpoints.down('sm'));
       return (
           <div className={classes.root}>
-            {matches ? <MobileBanner className="mobile-header" /> : <Banner className="header" />}
-            {matches ? <MobileSection className="mobile-header" /> : <Section />}
+            {!matches ? <Banner className="header" /> : <MobileBanner className="mobile-header" />}
+            {!matches ? <Section /> : <MobileSection className="mobile-header" />}
           </div>
       )
     }
