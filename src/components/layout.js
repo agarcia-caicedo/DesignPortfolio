@@ -14,7 +14,7 @@ const useStyles = makeStyles({
     }
 });
 
-/*const Layout= () => {
+const Layout= () => {
     const classes = useStyles();
     const theme = useTheme();
     const matches = useMediaQuery(theme.breakpoints.down('sm'));
@@ -23,18 +23,7 @@ const useStyles = makeStyles({
             {matches ? <MobileLayout /> : <DesktopLayout />}
           </div>
       )
-    }*/
-
-    const Layout= () => {
-      const classes = useStyles();
-      const theme = useTheme();
-      const matches = useMediaQuery(theme.breakpoints.down('sm'));
-        return (
-            <div className={classes.root}>
-              <DesktopLayout />
-            </div>
-        )
-      }
+    }
 
 const MobileLayout = () => {
   const classes = useStyles();
