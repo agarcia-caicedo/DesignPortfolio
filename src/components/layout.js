@@ -6,6 +6,7 @@ import useMediaQuery from '@material-ui/core/useMediaQuery';
 import MobileBanner from './mobileBanner';
 import Banner from './banner';
 import Section from './section';
+import MobileSection from './mobileSection';
 
 const useStyles = makeStyles({
     root: {
@@ -20,7 +21,7 @@ const Layout= () => {
       return (
           <div className={classes.root}>
             {matches ? <MobileBanner className="mobile-header" /> : <Banner className="header" />}
-            <Section />
+            {matches ? <MobileSection className="mobile-header" /> : <Section />}
           </div>
       )
     }

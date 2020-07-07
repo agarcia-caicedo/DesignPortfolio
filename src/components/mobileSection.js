@@ -7,53 +7,25 @@ import CardHeader from '@material-ui/core/CardHeader';
 import CardContent from '@material-ui/core/CardContent';
 import CardMedia from '@material-ui/core/CardMedia';
 import Typography from '@material-ui/core/Typography';
+import AppBar from '@material-ui/core/AppBar';
+import IconButton from '@material-ui/core/IconButton';
+import MenuIcon from '@material-ui/icons/Menu';
 import { Button } from "@material-ui/core";
 
 import Telescope from "../media/telescope.png"
 import Hex from "../media/hex.png"
 
-const useStyles = makeStyles({
+const useStyles = makeStyles((theme) => ({
   root: {
     backgroundColor: "#fff",
     height: "100vh",
-  },
-  sideBar: {
-    backgroundColor: "#d24d22",
-  },
-  linkList: {
-    backgroundColor: "#FFCB51",
-    height: "8vh",
-    marginTop: "25vh",
-    marginBottom: "5vh",
-    fontFamily: "'Oswald', sans-serif",
-    color: "#430C05",
-    display: "block",
-    fontSize: "5vh",
-    textAlign: "center",
-  },
-  linkList2: {
-    backgroundColor: "#FFBA26",
-    height: "8vh",
-    marginBottom: "5vh",
-    fontFamily: "'Oswald', sans-serif",
-    color: "#430C05",
-    display: "block",
-    fontSize: "5vh",
-    textAlign: "center",
-  },
-  linkList3: {
-    backgroundColor: "#E67413",
-    height: "8vh",
-    fontFamily: "'Oswald', sans-serif",
-    fontSize: "5vh",
-    color: "#430C05",
-    display: "block",
-    textAlign: "center",
   },
   center: {
     display: "flex",
     justifyContent: "center",
     alignItems: "center",
+    position: "relative",
+
   },
   header: {
     fontFamily: "'Galada', cursive",
@@ -64,21 +36,29 @@ const useStyles = makeStyles({
     paddingTop: "56.25%", // 16:9
   },
   card: {
-    width: "47vw",
+    width: "85vw",
   },
   text: {
     fontFamily: "'Oswald', sans-serif",
     color: "#0b3638",
   },
+  appBar: {
+    backgroundColor: "#c45124",
+    top: "1vh"
+  },
+  menuButton: {
+    marginLeft: "2vw",
+    justifyContent: "left",
+  },
   b: {
     fontFamily: "'Oswald', sans-serif",
     color: "#0b3638",
-    margin: "1vw",
+    marginBottom: "2vw",
     position: "relative",
-    right: "-35vw",
+    right: "-30vw",
     border: "solid 1px #0b3638"
   }
-})
+}))
 
 function Example(props) {
   var items = [
@@ -139,13 +119,13 @@ const Section = props => {
   const classes = useStyles()
   return (
     <>
+      <AppBar position="static" className={classes.appBar}>
+        <IconButton edge="start" className={classes.menuButton} color="inherit" aria-label="menu">
+            <MenuIcon />
+        </IconButton>
+      </AppBar>
       <Grid container className={classes.root} spacing={0}>
-        <Grid item xs={2} className={classes.sideBar}>
-          <div className={classes.linkList}>About</div>
-          <div className={classes.linkList2}>Work</div>
-          <div className={classes.linkList3}>Contact</div>
-        </Grid>
-        <Grid item xs={10} className={classes.center}>
+        <Grid item xs={12} className={classes.center}>
           <Example />
         </Grid>
       </Grid>

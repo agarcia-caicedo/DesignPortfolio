@@ -9,6 +9,15 @@ let theme = createMuiTheme({
             main: '#131c3f',
           },
     },
+    typography: {
+      fontFamily: [
+        //'Nunito',
+        //'Roboto',
+        'Galada',
+        //'Arial',
+        'sans-serif'
+      ].join(','),
+    }
 })
 
 theme = responsiveFontSizes(theme);

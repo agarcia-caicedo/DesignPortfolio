@@ -29,6 +29,7 @@ const useStyles = makeStyles({
     top: "15vh",
     left: "1vw",
     color: "#430C05",
+    backgroundImage: Triangle,
   },
   title2:{
     fontFamily: "'Chelsea Market', cursive",

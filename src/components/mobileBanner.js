@@ -41,29 +41,10 @@ const useStyles = makeStyles({
     fontFamily: "'Oswald', sans-serif",
     color: "#00363D",
     position: "absolute",
-    bottom: "17vh",
-    right: "2vh",
-  },
-  text2:{
-    fontFamily: "'Oswald', sans-serif",
-    color: "#00363D",
-    position: "absolute",
-    bottom: "12vh",
-    right: "2vh",
-  },
-  text3:{
-    fontFamily: "'Oswald', sans-serif",
-    color: "#00363D",
-    position: "absolute",
-    bottom: "7vh",
-    right: "2vh",
-  },
-  text4:{
-    fontFamily: "'Oswald', sans-serif",
-    color: "#00363D",
-    position: "absolute",
     bottom: "2vh",
     right: "2vh",
+    width: "50vw",
+    textAlign: "right",
   },
 })
 
@@ -86,10 +67,7 @@ export default function MobileBanner() {
       <Grid item md={6} sm={12} xs={12} className={classes.pages}>
         <Grid container justify="flex-end" className={classes.pageDesign} spacing={0}>
           <img src={TriangleBlue} alt="Blue triangles" className={classes.triangle}></img>
-          <Typography variant="h3" className={classes.text}>Hi! I'm a Software</Typography>
-          <Typography variant="h3" className={classes.text2}>Development student</Typography>
-          <Typography variant="h3" className={classes.text3}>with an interest</Typography>
-          <Typography variant="h3" className={classes.text4}>in UI design</Typography>
+          <Typography variant="h4" className={classes.text}>Hi! I'm a Software Development student with an interest in UI design</Typography>
         </Grid>
       </Grid>
     </Grid>
