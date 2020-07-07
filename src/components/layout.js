@@ -20,9 +20,29 @@ const Layout= () => {
     const matches = useMediaQuery(theme.breakpoints.down('sm'));
       return (
           <div className={classes.root}>
-            {!matches ? <Banner className="header" /> : <MobileBanner className="mobile-header" />}
-            {!matches ? <Section /> : <MobileSection className="mobile-header" />}
+            {matches ? <MobileLayout /> : <DesktopLayout />}
           </div>
       )
     }
+
+const MobileLayout = () => {
+  const classes = useStyles();
+  return (
+   <div className={classes.root}>
+    <MobileBanner />
+    <MobileSection />
+   </div>
+  )
+}
+
+const DesktopLayout = () => {
+  const classes = useStyles();
+  return (
+   <div className={classes.root}>
+    <Banner />
+    <Section />
+   </div>
+  )
+}
+
 export default Layout;
