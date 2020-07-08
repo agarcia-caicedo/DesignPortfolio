@@ -6,4 +6,5 @@
 
 module.exports = {
   pathPrefix: "/DesignPortfolio",
+  plugins: [`gatsby-plugin-material-ui`],
 }
