@@ -7,7 +7,7 @@
 module.exports = {
   pathPrefix: "/DesignPortfolio",
   plugins: [
-    'gatsby-plugin-layout',
+    'gatsby-plugin-top-layout',
     {
       resolve: 'gatsby-plugin-material-ui',
       // If you want to use styled components you should change the injection order.
@@ -17,5 +17,5 @@ module.exports = {
         // },
       },
     },
-  ],
+  ]
 }
