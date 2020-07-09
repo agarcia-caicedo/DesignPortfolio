@@ -3,8 +3,8 @@ import { MuiThemeProvider }from '@material-ui/core/styles';
 import Layout from '../components/layout';
 import theme from '../theme';
 
-import 'typeface-roboto';
 import './index.css';
+import 'typeface-roboto';
 
 const IndexPage = () => (
     <MuiThemeProvider theme={theme}>
