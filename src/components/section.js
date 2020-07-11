@@ -14,8 +14,8 @@ import Hex from "../media/hex.png"
 
 const useStyles = makeStyles({
   root: {
-    backgroundColor: "#fff",
-    height: "100vh",
+    backgroundColor: "#fff!important",
+    height: "100vh!important",
   },
   sideBar: {
     backgroundColor: "#d24d22",
